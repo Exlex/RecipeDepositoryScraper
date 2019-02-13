@@ -32,8 +32,9 @@ for ingredient in ingredients_list:
 
 
 
-directions = recipe_container.find(class_='directions').get_text('\n\n', strip=True).replace('Directions', '').strip()
-print('\n'+directions+'\n')
+directions = recipe_container.find(class_='directions').get_text('\n', strip=True).replace('Directions', '').strip().splitlines()
+for instruction in directions:
+	print(instruction)
 
 
 post_data = {
