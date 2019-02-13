@@ -2,12 +2,6 @@ import requests
 from bs4 import BeautifulSoup
 from pymongo import MongoClient
 
-#connect('mongodb+srv://dbadmin:knigareceptov96@cluster0.mongodb.net/myDb?retryWrites=true')
-#connect(
-#	db='myDb',
-#	username='dbadmin',
-#	password='knigareceptov96',
-#	host='mongodb://dbadmin:knigareceptov96@cluster0.mongodb.net/myDb?retryWrites=true')
 db_srv_url = open('settings.cfg', 'r').readline().strip()
 client = MongoClient(db_srv_url)
 db = client['myDb']
