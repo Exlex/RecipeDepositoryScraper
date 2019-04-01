@@ -54,14 +54,14 @@ client = MongoClient(settings.readline().strip())
 settings.close()
 db = client['myDb']
 
-i = 100 # how many recipes to scrape
+number_of_recipes = 100 # how many recipes to scrape
 
-while(i > 0):
-	print('Scrapes left:' + str(i-1))
+while(number_of_recipes > 0):
+	print('Scrapes left:' + str(number_of_recipes-1))
 	post_data = scrape()
 	if post_data:
 		result = db.recipes.insert_one(post_data)
 
 	
-	i -= 1
+	number_of_recipes -= 1
 
